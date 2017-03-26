@@ -17,19 +17,19 @@ class Key
   def key_b
     new = digits.to_s.each_char.to_a
     b = new[1] + new[2]
-    b = a.to_i
+    b = b.to_i
   end
 
   def key_c
     new = digits.to_s.each_char.to_a
     c = new[2] + new[3]
-    c = a.to_i
+    c = c.to_i
   end
 
   def key_d
     new = digits.to_s.each_char.to_a
     d = new[3] + new[4]
-    d = a.to_i
+    d = d.to_i
   end
 
 
