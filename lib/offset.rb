@@ -13,5 +13,5 @@ class Offset
 
 end
 
-binding.pry
+#binding.pry
 ""
