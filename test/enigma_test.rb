@@ -11,4 +11,12 @@ class EnigmaTest < Minitest::Test
     assert_instance_of Enigma, e
   end
 
+  def test_character_map_is_complete
+    e = Enigma.new
+
+    assert_instance_of Array, e.character_map
+    
+    assert_equal 39, e.character_map.length
+  end
+
 end
