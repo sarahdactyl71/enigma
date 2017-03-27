@@ -4,7 +4,7 @@ class Key
 
   attr_reader :digits
   
-  def initialize(digits)
+  def initialize(digits=81625)
     @digits = digits
   end
 
