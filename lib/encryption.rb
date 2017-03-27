@@ -10,14 +10,13 @@ class Encryption
   end
 
   def get_message
-    #binding.pry
     new_message = File.read("./lib/message.txt") 
   end
 
 
   def rotations
-    new_key = Key.new
-    new_offset = Offset.new
+    new_key = Key.new 
+    new_offset= Offset.new
     rotation_a = rotation_a(new_key, new_offset)
     rotation_b = rotation_b(new_key, new_offset)
     rotation_c = rotation_c(new_key, new_offset)
@@ -49,9 +48,12 @@ class Encryption
   end
 
   def encrypt 
-    #adds rotations to each letter of message
-    #
+    message_length = get_message.chars.length
+    message_length.times do 
+      
   end
+
+    
 end
-#binding.pry
-""
+# binding.pry
+# ""
