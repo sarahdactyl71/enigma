@@ -49,7 +49,7 @@ class Encryption
   end
 
   def encrypt 
-    #adds rotations to each letter of message
+    # adds rotations to each letter of message
     #
   end
 end

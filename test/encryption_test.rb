@@ -17,4 +17,10 @@ class EncryptionTest < Minitest::Test
 
     assert_equal "i like cats and dogs. and here is some uses of numbers 4 2 1", secret.get_message
   end
+
+  def test_does_rotation_return_correct_number
+    secret = Encryption.new()
+
+    assert_equal 
+  end
 end
