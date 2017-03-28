@@ -22,18 +22,20 @@ class EncryptionTest < Minitest::Test
     secret = Encryption.new
     new_key = Key.new 
     new_offset= Offset.new
-    assert_equal 89, secret.rotation_a(new_key, new_offset)
-    assert_equal 18, secret.rotation_b(new_key, new_offset)
-    assert_equal 70, secret.rotation_c(new_key, new_offset)
-    assert_equal 34, secret.rotation_d(new_key, new_offset)
+    assert_equal 89, secret.rotation_a
+    assert_equal 18, secret.rotation_b
+    assert_equal 70, secret.rotation_c
+    assert_equal 34, secret.rotation_d
   end
 
-  def test_the_message_is_encrypted
+  def test_the_message_is_encrypted_with_offset_a
     secret= Encryption.new
-    assert_equal "wr6", secret.encrypt
+
+    assert_equal "ns6", secret.encrypt
   end
 
   def test_does_rotation_return_correct_number
+    skip
     secret = Encryption.new()
 
     assert_equal 
