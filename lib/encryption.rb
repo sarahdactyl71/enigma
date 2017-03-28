@@ -49,7 +49,7 @@ class Encryption
 
   def encrypt 
     message_length = get_message.chars.length
-    message_length.times do 
+    (message_length -1).times do 
       
   end
 
