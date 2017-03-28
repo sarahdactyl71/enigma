@@ -15,7 +15,7 @@ class EncryptionTest < Minitest::Test
   def test_can_we_receive_message
     secret = Encryption.new
 
-    assert_equal "cab", secret.get_message
+    assert_equal "the quick brown fox jumps over the lazy dog 1 2 3 4", secret.get_message
   end
 
   def test_what_are_rotation_values
@@ -28,16 +28,10 @@ class EncryptionTest < Minitest::Test
     assert_equal 34, secret.rotation_d
   end
 
-  def test_the_message_is_encrypted_with_offset_a
+  def test_the_message_is_encrypted
     secret= Encryption.new
 
-    assert_equal "ns6", secret.encrypt
+    assert_equal "2z84z.. to5lxad4o6n4s.cj1oepn90nqw0fjdo4m6 4 os4.ou", secret.encrypt
   end
 
-  def test_does_rotation_return_correct_number
-    skip
-    secret = Encryption.new()
-
-    assert_equal 
-  end
 end
