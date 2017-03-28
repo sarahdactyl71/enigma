@@ -4,6 +4,7 @@ require 'minitest/pride'
 require './lib/offset'
 require './lib/key'
 require './lib/encryption'
+require 'pry'
 
 class EncryptionTest < Minitest::Test
 
@@ -28,10 +29,40 @@ class EncryptionTest < Minitest::Test
     assert_equal 34, secret.rotation_d
   end
 
+  def test_char_map_returns_array_of_chars
+    map = Charactermap.new
+    assert_kind_of Array, map.character_map
+  end
+
+  def test_rotate_chars
+    secret = Encryption.new
+
+    assert_equal "2", secret.rotate_chars("t", 0)
+    assert_equal "z", secret.rotate_chars("h", 1)
+    assert_equal "8", secret.rotate_chars("e", 2)
+    assert_equal "4", secret.rotate_chars(" ", 3)
+  end
+
   def test_the_message_is_encrypted
     secret= Encryption.new
 
-    assert_equal "2z84z.. to5lxad4o6n4s.cj1oepn90nqw0fjdo4m6 4 os4.ou", secret.encrypt
+    assert_equal "2z84z.. to5lxad4o6n4s.cj1oepn90nqw0fjdo4m6 4 os4.ou", secret.encrypter
+  end
+  
+  def test_if_writes_new_secret_file
+    e = Encryption.new
+    e.encrypter
+    new_file = File.open("./lib/secret_message.txt", "r")
+    assert_equal "2z84z.. to5lxad4o6n4s.cj1oepn90nqw0fjdo4m6 4 os4.ou", File.read("./lib/secret_message.txt")
+  end 
+
+  def test_say_hi
+    e = Encryption.new
+    assert_equal "hi there", e.say_hi
   end
 
+  def test_what_is_rotation_a
+    e = Encryption.new
+    assert_equal 89, e.rotation_a
+  end
 end
