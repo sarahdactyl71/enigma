@@ -44,16 +44,6 @@ class Crack
     crack_rotation_d = char_map.index(find_end[3]) - char_map.index(transformer[3])
   end
 
-  # def      
-  #   finder = "..end.."
-  #   input = get_secret.chars[-(4+switch)..-(1+switch)]
-  # end
-
-
-
-
-
-
   # def decrypt_chars(char, index)
   #   return char_map.rotate(-rotation_a)[char_map.index(char)] if index == 0
   #   return char_map.rotate(-rotation_b)[char_map.index(char)] if index == 1
