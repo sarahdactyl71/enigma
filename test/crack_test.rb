@@ -26,4 +26,10 @@ class CrackTest < Minitest::Test
     assert_equal -30, c.crack_rotation_c
     assert_equal 6, c.crack_rotation_d
   end
+
+  def test_does_it_crack
+    c = Crack.new
+    
+    assert_equal "the quick brown fox jumps over the lazy dog 1 2 3 4 ..end.." , c.cracker
+  end
 end

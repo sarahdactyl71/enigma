@@ -4,10 +4,6 @@ require './lib/character_map'
 
 class Crack
 
-  # def initialize
-  #   @offset = 
-     
-  # end
 
   def get_secret
     File.read("./lib/secret_message.txt")
@@ -44,24 +40,24 @@ class Crack
     crack_rotation_d = char_map.index(find_end[3]) - char_map.index(transformer[3])
   end
 
-  # def decrypt_chars(char, index)
-  #   return char_map.rotate(-rotation_a)[char_map.index(char)] if index == 0
-  #   return char_map.rotate(-rotation_b)[char_map.index(char)] if index == 1
-  #   return char_map.rotate(-rotation_c)[char_map.index(char)] if index == 2
-  #   return char_map.rotate(-rotation_d)[char_map.index(char)] if index == 3
-  # end
+  def crack_chars(char, index)
+    return char_map.rotate(crack_rotation_a)[char_map.index(char)] if index == 0
+    return char_map.rotate(crack_rotation_b)[char_map.index(char)] if index == 1
+    return char_map.rotate(crack_rotation_c)[char_map.index(char)] if index == 2
+    return char_map.rotate(crack_rotation_d)[char_map.index(char)] if index == 3
+  end
 
-  # def decrypter
-  #   input = get_secret.chars
-  #   active_input = []
-  #   decrypted_message  = ""
-  #   until input.empty?
-  #     active_input = input.shift(4)
-  #     active_input.each_with_index do |char, i|
-  #       decrypted_message << decrypt_chars(char, i)
-  #     end
-  #   end
-  #   decrypted_message
-  # end 
+  def cracker
+    input = get_secret.chars
+    active_input = []
+    decrypted_message  = ""
+    until input.empty?
+      active_input = input.shift(4)
+      active_input.each_with_index do |char, i|
+        decrypted_message << crack_chars(char, i)
+      end
+    end
+    decrypted_message
+  end 
 
 end
