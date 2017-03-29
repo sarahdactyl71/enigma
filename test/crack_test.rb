@@ -2,6 +2,7 @@ gem 'minitest'
 require 'minitest/autorun'
 require 'minitest/pride'
 require './lib/crack'
+require 'pry'
 
 class CrackTest < Minitest::Test
 
@@ -20,9 +21,9 @@ class CrackTest < Minitest::Test
   def test_it_can_find_rotation
     c = Crack.new
 
-    assert_equal 89, c.transformer
-    assert_equal 2, c.transfomer_b
-    assert_equal 1, c.transfomer_c
-    assert_equal 3, c.transfomer_d
+    assert_equal 31, c.crack_rotation_a
+    assert_equal 22, c.crack_rotation_b
+    assert_equal -30, c.crack_rotation_c
+    assert_equal 6, c.crack_rotation_d
   end
 end
