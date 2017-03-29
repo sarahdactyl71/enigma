@@ -62,5 +62,3 @@ class Encryption
   end
     
 end
-
-
