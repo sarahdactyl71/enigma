@@ -62,10 +62,3 @@ class Encryption
   end
     
 end
-<<<<<<< HEAD
-binding.pry
-""
-=======
-
-
->>>>>>> master
