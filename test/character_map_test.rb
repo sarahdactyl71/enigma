@@ -16,7 +16,7 @@ class CharactermapTest < Minitest::Test
 
     assert_instance_of Array, e.character_map
     
-    assert_equal 39, e.character_map.length
+    assert_equal 40, e.character_map.length
 
     assert_equal "h", e.character_map[7]
   end

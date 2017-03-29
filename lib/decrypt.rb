@@ -41,4 +41,9 @@ class Decrypt
     decrypted_message
   end
 
+  def decode_writer
+    new_file = File.open("./lib/decoded_message.txt", "w")
+    new_file.write(decrypter)
+  end
+
 end
