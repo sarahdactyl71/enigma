@@ -11,6 +11,11 @@ class DecryptTest < Minitest::Test
     assert_instance_of Decrypt, d
   end
 
+  def test_char_map_returns_array_of_chars
+    map = Charactermap.new
+    assert_kind_of Array, map.character_map
+  end
+  
   def test_chars_can_be_decrypted
     d = Decrypt.new
 
