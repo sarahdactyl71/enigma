@@ -36,4 +36,12 @@ class DecryptTest < Minitest::Test
 
     assert_equal "the quick brown fox jumps over the lazy dog 1 2 3 4", d.decrypter    
   end
+
+  def test_if_writes_new_decoded_file
+    d = Decrypt.new
+    d.decrypter
+    new_file = File.open("./lib/decoded_message.txt", "r")
+    assert_equal "the quick brown fox jumps over the lazy dog 1 2 3 4", File.read("./lib/decoded_message.txt")
+  end 
+
 end
