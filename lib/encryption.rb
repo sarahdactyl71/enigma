@@ -11,7 +11,7 @@ class Encryption
   end
 
   def get_message
-    new_message = File.read("./lib/message.txt")
+    new_message =  "team tom and sarah" #File.read("./lib/message.txt")
     new_message
   end
 
@@ -72,5 +72,5 @@ class Encryption
   end
     
 end
-#binding.pry
-#""
+binding.pry
+""
