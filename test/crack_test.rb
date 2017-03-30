@@ -18,6 +18,11 @@ class CrackTest < Minitest::Test
     assert_equal "2z84z.. to5lxad4o6n4s.cj1oepn90nqw0fjdo4m6 4 os4.ou4hq8hmq2", c.get_secret
   end
 
+  def test_what_is_value_of_switch
+    c = Crack.new
+    assert_equal 3, c.switch 
+  end
+
   def test_it_can_find_rotation
     c = Crack.new
 
