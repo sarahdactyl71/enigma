@@ -19,10 +19,17 @@ module Cyphers
      @new_key.key_d + @new_offset.off_d
   end
 
-  def rotate_chars(char, index)
-    return char_map.rotate(rotation_a)[char_map.index(char)] if index == 0
-    return char_map.rotate(rotation_b)[char_map.index(char)] if index == 1
-    return char_map.rotate(rotation_c)[char_map.index(char)] if index == 2
-    return char_map.rotate(rotation_d)[char_map.index(char)] if index == 3
+  def rotate_chars(crypt, char, index)
+    if crypt == 'encrypt'
+      return MAP.rotate(rotation_a)[MAP.index(char)] if index == 0
+      return MAP.rotate(rotation_b)[MAP.index(char)] if index == 1
+      return MAP.rotate(rotation_c)[MAP.index(char)] if index == 2
+      return MAP.rotate(rotation_d)[MAP.index(char)] if index == 3
+    elsif crypt == 'decrypt'
+      return MAP.rotate(-rotation_a)[MAP.index(char)] if index == 0
+      return MAP.rotate(-rotation_b)[MAP.index(char)] if index == 1
+      return MAP.rotate(-rotation_c)[MAP.index(char)] if index == 2
+      return MAP.rotate(-rotation_d)[MAP.index(char)] if index == 3
+    end
   end
 end 
