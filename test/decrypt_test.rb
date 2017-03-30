@@ -28,13 +28,13 @@ class DecryptTest < Minitest::Test
   def test_can_we_get_secret_message
     d = Decrypt.new
 
-    assert_equal "2z84z.. to5lxad4o6n4s.cj1oepn90nqw0fjdo4m6 4 os4.ou", d.get_secret
+    assert_equal "2z84z.. to5lxad4o6n4s.cj1oepn90nqw0fjdo4m6 4 os4.ou4hq8hmq2", d.get_secret
   end
   
   def test_a_secret_message_can_be_decrypted
     d = Decrypt.new
 
-    assert_equal "the quick brown fox jumps over the lazy dog 1 2 3 4", d.decrypter    
+    assert_equal "the quick brown fox jumps over the lazy dog 1 2 3 4 ..end..", d.decrypter    
   end
 
   def test_if_writes_new_decoded_file

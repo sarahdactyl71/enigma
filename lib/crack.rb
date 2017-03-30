@@ -13,14 +13,16 @@ class Crack
     Charactermap.new.character_map
   end
 
+  def switch
+    get_secret.length % 4
+  end
+
   def transformer
-    switch = get_secret.length % 4
     input = get_secret.chars[-(4+switch)..-(1+switch)]
   end  
 
   def find_end
     known = "..end..".chars
-    switch = get_secret.length % 4
     wanted = known[-(4+switch)..-(1+switch)]
   end
 

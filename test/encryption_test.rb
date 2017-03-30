@@ -56,11 +56,6 @@ class EncryptionTest < Minitest::Test
     assert_equal "2z84z.. to5lxad4o6n4s.cj1oepn90nqw0fjdo4m6 4 os4.ou4hq8hmq2", File.read("./lib/secret_message.txt")
   end 
 
-  def test_say_hi
-    e = Encryption.new
-    assert_equal "hi there", e.say_hi
-  end
-
   def test_what_is_rotation_a
     e = Encryption.new
     assert_equal 89, e.rotation_a

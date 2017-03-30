@@ -1,10 +1,4 @@
-# here be module things
-
 module Cyphers
-
-  def say_hi
-    "hi there"
-  end
 
   def rotation_a
    @new_key.key_a + @new_offset.off_a

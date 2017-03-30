@@ -29,7 +29,5 @@ class Offset
   end
 
 end
-# offset = Offset.new
-# binding.pry
-# ""
+
 

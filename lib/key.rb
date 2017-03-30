@@ -34,8 +34,3 @@ class Key
 
 
 end
-
-key = Key.new(81625)
-
-# binding.pry
-# ""
